@@ -894,10 +894,13 @@
             .compare-table th, .compare-table td { padding: 16px 10px; font-size: 13px; }
             .compare-table th:first-child, .compare-table td:first-child { padding-left: 15px; }
             .leads-calc-container { grid-template-columns: 1fr; }
-            /* Hide nav links on mobile */
+            /* Hide nav links, show hamburger on mobile */
             .nav-links { display: none !important; }
             .nav-right { display: none !important; }
             nav { padding: 10px 4%; }
+            .mobile-menu-btn { display: flex !important; }
+            .mobile-dropdown { display: none; }
+            .mobile-dropdown.open { display: flex !important; }
             /* Fix horizontal overflow */
             html, body { overflow-x: hidden; max-width: 100vw; }
             .container { padding: 0 20px; }
@@ -911,6 +914,59 @@
             .fb-right { display: none !important; }
             /* Section padding */
             section { padding-left: 20px; padding-right: 20px; }
+        }
+
+        /* Mobile hamburger + dropdown */
+        .mobile-menu-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .mobile-menu-btn svg { width: 24px; height: 24px; }
+
+        .mobile-dropdown {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+        .mobile-dropdown a {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            transition: color 0.2s;
+            letter-spacing: 1px;
+        }
+        .mobile-dropdown a:hover { color: var(--cyan-primary); }
+        .mobile-dropdown .mobile-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 32px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .mobile-dropdown .mobile-close:hover { color: #fff; }
+        .mobile-dropdown .btn-cyan {
+            margin-top: 12px;
+            padding: 14px 32px;
+            font-size: 16px;
         }
 
         @media (max-width: 480px) {
@@ -977,7 +1033,24 @@
             <a href="#calculator" class="btn-ghost">Calculate Revenue</a>
             <a href="contact.html" class="btn-cyan">Book Here</a>
         </div>
+
+        <!-- Mobile hamburger button -->
+        <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
     </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav" class="mobile-dropdown">
+        <button class="mobile-close" onclick="document.getElementById('mobile-nav').classList.remove('open')">&times;</button>
+        <a href="#platform" onclick="document.getElementById('mobile-nav').classList.remove('open')">Platform</a>
+        <a href="#features" onclick="document.getElementById('mobile-nav').classList.remove('open')">Features</a>
+        <a href="#calculator" onclick="document.getElementById('mobile-nav').classList.remove('open')">ROI Calculator</a>
+        <a href="#pricing" onclick="document.getElementById('mobile-nav').classList.remove('open')">Pricing</a>
+        <a href="contact.html" class="btn-cyan">Book Here</a>
+    </div>
 
     <!-- Minimalist Typography Hero -->
     <section class="hero">

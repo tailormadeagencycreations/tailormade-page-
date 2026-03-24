@@ -170,10 +170,21 @@
         .trace-line { stroke-dasharray: 20; animation: trace-dash 3s linear infinite; }
         @keyframes trace-dash { to { stroke-dashoffset: -40; } }
         
+        .mobile-menu-btn { display: none; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+        .mobile-menu-btn svg { width: 24px; height: 24px; }
+        .mobile-dropdown { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+        .mobile-dropdown a { font-size: 20px; font-weight: 600; color: #fff; letter-spacing: 1px; }
+        .mobile-dropdown a:hover { color: var(--cyan-primary); }
+        .mobile-dropdown .mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #888; font-size: 32px; cursor: pointer; }
+        .mobile-dropdown .btn-cyan { margin-top: 12px; padding: 14px 32px; font-size: 16px; }
+
         @media (max-width: 900px) {
             .nav-links { display: none !important; }
             .nav-right { display: none !important; }
             nav { padding: 10px 4%; }
+            .mobile-menu-btn { display: flex !important; }
+            .mobile-dropdown { display: none; }
+            .mobile-dropdown.open { display: flex !important; }
             html, body { overflow-x: hidden; max-width: 100vw; }
             .container { padding: 0 20px; }
             .site-footer .footer-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -235,7 +246,19 @@
             <a href="index.html#calculator" class="btn-ghost">Calculate Revenue</a>
             <a href="contact.html" class="btn-cyan">Book Here</a>
         </div>
+        <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
     </nav>
+
+    <div id="mobile-nav" class="mobile-dropdown">
+        <button class="mobile-close" onclick="document.getElementById('mobile-nav').classList.remove('open')">&times;</button>
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#calculator">ROI Calculator</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="contact.html" class="btn-cyan">Book Here</a>
+    </div>
 
     <!-- Onboarding Content (GHL Embed Ready) -->
     <section class="onboarding-hero container">
