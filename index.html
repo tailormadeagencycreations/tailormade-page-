@@ -855,6 +855,29 @@
             .compare-table th, .compare-table td { padding: 16px 10px; font-size: 13px; }
             .compare-table th:first-child, .compare-table td:first-child { padding-left: 15px; }
             .leads-calc-container { grid-template-columns: 1fr; }
+            /* Hide nav links on mobile */
+            .nav-links { display: none; }
+            .nav-right { display: none; }
+            /* Fix horizontal overflow */
+            html, body { overflow-x: hidden; max-width: 100vw; }
+            .container { padding: 0 20px; }
+            /* Compare table scroll */
+            .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            /* Hero text sizing */
+            .hero-title { font-size: clamp(36px, 8vw, 60px); }
+            .hero-subtitle { font-size: 14px; max-width: 90%; }
+            .hero-logo-box { transform: scale(0.85); }
+            /* Spacer fix */
+            .fb-right { display: none !important; }
+            /* Section padding */
+            section { padding-left: 20px; padding-right: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .ind-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: clamp(32px, 7vw, 48px); }
+            .nav-logo-container { transform: scale(0.5); margin-left: -40px; }
+            .compare-table th, .compare-table td { padding: 12px 8px; font-size: 11px; }
         }
     </style>
 </head>
