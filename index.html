@@ -930,6 +930,7 @@
         .mobile-menu-btn svg { width: 24px; height: 24px; }
 
         .mobile-dropdown {
+            display: none !important;
             position: fixed;
             top: 0;
             left: 0;
@@ -942,6 +943,9 @@
             align-items: center;
             justify-content: center;
             gap: 24px;
+        }
+        .mobile-dropdown.open {
+            display: flex !important;
         }
         .mobile-dropdown a {
             font-size: 20px;
