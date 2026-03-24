@@ -1300,17 +1300,46 @@
         </div>
     </section>
 
-    <!-- Guarantee / Pricing CTA Section -->
-    <section id="pricing" class="cta-bottom-section">
-        <div class="cta-glow-large"></div>
-        <div class="container">
-            <div class="cta-box">
-                <h2>A Done-For-You Service.</h2>
-                <p>
-                    No massive upfront retainer costs or bloated software fees. Run a 100% free test drive on our infrastructure, and only pay when we generate real results setting up your custom AI.
-                </p>
-                <a href="contact.html" class="btn-cyan" style="display: inline-block; padding: 16px 36px; font-size: 16px;">Book a Consultation</a>
+    <!-- Pricing / How It Works Section -->
+    <section id="pricing" style="padding: 100px 0; position: relative;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 16px;">A Done-For-You Service.</h2>
+            <p style="color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto 60px;">No massive retainers. No bloated software fees. Just results.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto 50px;">
+                <!-- Step 1 -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px 28px; text-align: center;">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(0, 242, 254, 0.1); border: 2px solid var(--cyan-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; color: var(--cyan-primary);">1</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Free AI Audit</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">We analyze your current operations and show you exactly where AI can capture revenue you're leaving on the table.</p>
+                    <div style="margin-top: 20px; font-family: 'Orbitron', sans-serif; font-size: 28px; font-weight: 700; color: var(--cyan-primary);">$0</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div style="background: var(--bg-card); border: 2px solid var(--cyan-primary); border-radius: 16px; padding: 40px 28px; text-align: center; position: relative; box-shadow: 0 0 40px rgba(0, 242, 254, 0.08);">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--cyan-primary); color: #000; font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase;">Most Popular</div>
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(0, 242, 254, 0.1); border: 2px solid var(--cyan-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; color: var(--cyan-primary);">2</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Free Test Drive</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">We build and deploy your custom AI system on our infrastructure. You test it live with real leads. No risk.</p>
+                    <div style="margin-top: 20px; font-family: 'Orbitron', sans-serif; font-size: 28px; font-weight: 700; color: var(--cyan-primary);">$0</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px 28px; text-align: center;">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(0, 242, 254, 0.1); border: 2px solid var(--cyan-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; color: var(--cyan-primary);">3</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Pay On Results</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">Only pay when the AI generates real results for your business. Custom pricing based on your needs and scale.</p>
+                    <div style="margin-top: 20px; font-family: 'Orbitron', sans-serif; font-size: 28px; font-weight: 700; color: var(--cyan-primary);">Custom</div>
+                </div>
             </div>
+
+            <!-- Urgency -->
+            <div style="background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.15); border-radius: 12px; padding: 16px 24px; display: inline-block; margin-bottom: 30px;">
+                <span style="color: var(--cyan-primary); font-size: 14px; font-weight: 600;">Free test drive ends when capacity is full.</span>
+            </div>
+
+            <br>
+            <a href="contact.html" class="btn-cyan" style="display: inline-block; padding: 16px 36px; font-size: 16px; margin-top: 10px;">Book Your Free Audit</a>
         </div>
     </section>
 
@@ -1475,5 +1504,47 @@
         });
     </script>
     <!-- Chatbot disabled until business number acquired -->
-    <!-- <script src="/chatbot-widget.js"></script> -->`n</body>
+    <!-- <script src="/chatbot-widget.js"></script> -->
+
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); align-items: center; justify-content: center;">
+        <div style="background: #0a0a0a; border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 20px; max-width: 460px; width: 90%; padding: 48px 36px; text-align: center; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(0, 242, 254, 0.05);">
+            <button onclick="document.getElementById('exit-popup').style.display='none'" style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: #888; font-size: 24px; cursor: pointer; line-height: 1;">&times;</button>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 14px; color: var(--cyan-primary); letter-spacing: 2px; margin-bottom: 16px;">BEFORE YOU GO</div>
+            <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 12px; color: #fff;">Book a Free 15-Min Discovery Call</h3>
+            <p style="color: #888; font-size: 15px; line-height: 1.6; margin-bottom: 28px;">See exactly how AI can capture leads and automate your operations — zero commitment, zero cost.</p>
+            <a href="contact.html" style="display: inline-block; padding: 14px 32px; background: var(--cyan-primary); color: #000; font-weight: 700; font-size: 14px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Book My Free Call</a>
+            <br>
+            <button onclick="document.getElementById('exit-popup').style.display='none'" style="background: none; border: none; color: #555; font-size: 13px; margin-top: 16px; cursor: pointer;">No thanks, I'm good</button>
+        </div>
+    </div>
+
+    <script>
+        // Exit intent — shows once per session
+        (function() {
+            var shown = false;
+            document.addEventListener('mouseout', function(e) {
+                if (shown) return;
+                if (e.clientY < 5 && !e.relatedTarget && !e.toElement) {
+                    var dismissed = sessionStorage.getItem('exit-popup-dismissed');
+                    if (dismissed) return;
+                    document.getElementById('exit-popup').style.display = 'flex';
+                    shown = true;
+                }
+            });
+            document.getElementById('exit-popup').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    sessionStorage.setItem('exit-popup-dismissed', 'true');
+                }
+            });
+            var closeButtons = document.querySelectorAll('#exit-popup button');
+            closeButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    sessionStorage.setItem('exit-popup-dismissed', 'true');
+                });
+            });
+        })();
+    </script>
+</body>
 </html>
